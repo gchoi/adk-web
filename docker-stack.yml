@@ -1,0 +1,66 @@
+version: "3.9"
+
+networks:
+  adk-web-net:
+    driver: overlay
+    attachable: true
+
+services:
+  adk-web-api:
+    image: ${DOCKER_URL}/adk-web-api:latest
+    ports:
+      - "${ADK_WEB_API_SERVER}:3000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_GENAI_USE_VERTEXAI=${GOOGLE_GENAI_USE_VERTEXAI}
+      - OLLAMA_API_BASE=${OLLAMA_API_BASE}
+      - OLLAMA_HOST_MODEL_ID=${OLLAMA_HOST_MODEL_ID}
+      - OLLAMA_OCR_MODEL_ID=${OLLAMA_OCR_MODEL_ID}
+      - GEMINI_HOST_MODEL_ID=${GEMINI_HOST_MODEL_ID}
+      - GEMINI_OCR_MODEL_ID=${GEMINI_OCR_MODEL_ID}
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        window: 120s
+      labels:
+        - "app=adk-web-api"
+    networks:
+      - adk-web-net
+
+  adk-web:
+    image: ${DOCKER_URL}/adk-web:latest
+    ports:
+      - "${ADK_WEB_SERVICE_PORT}:80"
+    environment:
+      - BACKEND_URL=http://localhost:${ADK_WEB_API_SERVER}
+    depends_on:
+      - adk-web-api
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        window: 120s
+      labels:
+        - "app=adk-web"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - adk-web-net
