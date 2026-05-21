@@ -17,7 +17,7 @@
 
 import {ChangeDetectionStrategy, Component, Inject, inject, input, OnChanges, SimpleChanges} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatIconButton} from '@angular/material/button';
 import {MatOption} from '@angular/material/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatIcon} from '@angular/material/icon';
@@ -98,7 +98,6 @@ export function isArtifactAudio(mimeType: string): boolean {
         MatSelect,
         FormsModule,
         MatOption,
-        MatButton,
         MatIconButton,
         MatIcon,
         AudioPlayerComponent,

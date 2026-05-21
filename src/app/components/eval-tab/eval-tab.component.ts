@@ -19,12 +19,11 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {DecimalPipe, NgClass} from '@angular/common';
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, inject, InjectionToken, input, OnChanges, OnInit, output, signal, SimpleChanges, Type, viewChildren} from '@angular/core';
 import {MatButton, MatIconButton} from '@angular/material/button';
-import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatDialog} from '@angular/material/dialog';
 import {MatIcon} from '@angular/material/icon';
 import {MatProgressSpinner} from '@angular/material/progress-spinner';
-import {MatCell, MatCellDef, MatColumnDef, MatHeaderCell, MatHeaderCellDef, MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable, MatTableDataSource} from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
 import {MatTooltip} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -86,24 +85,11 @@ interface AppEvaluationResult {
     MatIcon,
     MatButton,
     MatIconButton,
-    MatButtonToggle,
-    MatButtonToggleGroup,
     MatTooltip,
-    MatTable,
-    MatColumnDef,
-    MatHeaderCellDef,
-    MatHeaderCell,
     MatCheckbox,
-    MatCellDef,
-    MatCell,
     DecimalPipe,
     NgClass,
-    MatHeaderRowDef,
-    MatHeaderRow,
-    MatRowDef,
-    MatRow,
     MatProgressSpinner,
-    DeleteSessionDialogComponent,
     InfoTable,
     MatSelectModule,
     MatFormFieldModule,

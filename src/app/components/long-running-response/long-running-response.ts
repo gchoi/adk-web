@@ -35,11 +35,11 @@ import {MatIcon} from '@angular/material/icon';
   styleUrl: './long-running-response.scss',
   imports: [
     FormsModule,
+    MarkdownComponent,
     MatIconButton,
     MatButton,
     MatIcon,
     NgxJsonViewerModule,
-    MarkdownComponent,
   ],
 })
 export class LongRunningResponseComponent implements OnChanges {

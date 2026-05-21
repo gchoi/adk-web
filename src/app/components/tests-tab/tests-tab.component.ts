@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatCell, MatCellDef, MatColumnDef, MatHeaderCell, MatHeaderCellDef, MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatCell, MatCellDef, MatColumnDef, MatHeaderCell, MatHeaderCellDef, MatRow, MatRowDef, MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Subject } from 'rxjs';
@@ -46,15 +46,12 @@ import { PromptDialogComponent } from '../prompt-dialog/prompt-dialog.component'
     MatHeaderCell,
     MatCellDef,
     MatCell,
-    MatHeaderRowDef,
-    MatHeaderRow,
     MatRowDef,
     MatRow,
     MatTooltipModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
-    PromptDialogComponent,
   ],
 })
 export class TestsTabComponent implements OnInit, OnChanges {

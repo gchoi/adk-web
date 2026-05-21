@@ -30,7 +30,7 @@ import {isComputerUseResponse, isVisibleComputerUseClick} from '../../core/model
 import type {EvalCase} from '../../core/models/Eval';
 import {UiEvent} from '../../core/models/UiEvent';
 import {WorkflowGraphTooltipDirective} from '../../directives/workflow-graph-tooltip.directive';
-import {JsonTooltipDirective} from '../../directives/html-tooltip.directive';
+
 import {ComputerActionComponent} from '../computer-action/computer-action.component';
 import {HoverInfoButtonComponent} from '../hover-info-button/hover-info-button.component';
 import {LongRunningResponseComponent} from '../long-running-response/long-running-response';
@@ -54,7 +54,6 @@ import {ContentBubbleComponent} from '../content-bubble/content-bubble.component
     HoverInfoButtonComponent,
     ContentBubbleComponent,
     MatMenuModule,
-    JsonTooltipDirective,
   ],
 })
 export class EventContentComponent {
