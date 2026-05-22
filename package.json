@@ -52,6 +52,7 @@
     "typescript": "~5.9.2"
   },
   "overrides": {
+    "errorstacks": "2.4.0",
     "uuid": "^11",
     "webpack-dev-server": "^5.2.4"
   }
